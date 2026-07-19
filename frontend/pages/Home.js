@@ -12,7 +12,7 @@ const Home = () => {
 
     try {
       const res = await axios.get(
-        `${API.PRODUCT_URL}/product/getproduct`,
+        `${API.PRODUCT_URL}/getproduct`,
         {
           headers: {
             authorization: `Bearer ${accessToken}`
@@ -21,8 +21,13 @@ const Home = () => {
       )
       setProduct(res.data.products)
     } catch (error) {
-      console.log('Error fetching products:', error.message)
-      Alert.alert('Error', 'Failed to load products')
+      console.log('Error fetching products:', error.response?.status, error.message)
+      if (error.response?.status === 401) {
+        // Token expired or invalid — clear it and force re-login
+        await logout()
+      } else {
+        Alert.alert('Error', 'Failed to load products')
+      }
     }
   }
 

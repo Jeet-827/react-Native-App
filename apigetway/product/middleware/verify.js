@@ -10,7 +10,7 @@ export const verify = (req,res,next)=>{
         const token = authHeader.split(" ")[1];
 
         if(!token){
-            res.status(401).json({message:"token was missing"})
+            return res.status(401).json({message:"token was missing"})
         }
 
         const decode = jwt.verify(token,process.env.ACCESSTOKEN)
@@ -19,7 +19,7 @@ export const verify = (req,res,next)=>{
 
         next()
     } catch (error) {
-        res.status(501).json({message:"somthing is wrong in verify "})
+        res.status(401).json({message:"Invalid or expired token"})
         
     }
 }

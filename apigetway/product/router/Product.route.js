@@ -3,7 +3,7 @@ import { verify } from "../middleware/verify.js";
 import { Router } from "express";
 
 const ProductRoute = Router()
-ProductRoute.get('/getproduct',verify,getProduct)
+ProductRoute.get('/getproduct',getProduct)
 
 export default ProductRoute
 

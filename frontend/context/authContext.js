@@ -1,5 +1,6 @@
 import { createContext, useState, useEffect } from "react";
 import * as SecureStorage from 'expo-secure-store';
+import { Platform } from 'react-native';
 
 export const usercontext = createContext();
 

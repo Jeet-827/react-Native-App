@@ -33,7 +33,7 @@ const Signup = () => {
     setLoading(true)
     try {
       const res = await axios.post(
-        `${API.BACKEND_URL}/api/auth/signup`,
+        `${API.BACKEND_URL}/auth/signup`,
         {
           username: username.trim(),
           email: email.trim().toLowerCase(),

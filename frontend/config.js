@@ -1,7 +1,7 @@
 const API = {
 
-  BACKEND_URL: "http://localhost:5000",
-  PRODUCT_URL: "http://localhost:5001",
+  BACKEND_URL: "http://localhost:8000/api/authservice",
+  PRODUCT_URL: "http://localhost:8000/api/productservice",
 };
 
 export default API;

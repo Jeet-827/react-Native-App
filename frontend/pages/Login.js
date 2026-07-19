@@ -22,7 +22,7 @@ const Login = () => {
     setLoading(true)
     try {
       const res = await axios.post(
-        `${API.BACKEND_URL}/api/auth/signin`,
+        `${API.BACKEND_URL}/auth/signin`,
         { email: email.trim().toLowerCase(), password }
       )
       const accessToken = res.data.accessToken

@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken"
 
 export function genrateAccessToken(userId) {
-    const Token = jwt.sign({ id: userId }, process.env.ACCESSTOKEN, { expiresIn: "15m" })
+    const Token = jwt.sign({ id: userId }, process.env.ACCESSTOKEN, { expiresIn: "7d" })
     return Token
 }
 
