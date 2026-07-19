@@ -36,7 +36,7 @@ graph TD
     Client -->|HTTP GET/POST| Nginx
     
     %% Nginx to Gateway Replicas
-    Nginx -->|Proxy Pass (Round Robin)| Gateway
+    Nginx -->|Proxy Pass - Round Robin| Gateway
     
     %% Gateway to Microservices
     Gateway -->|/api/authservice/*| AuthService
