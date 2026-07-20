@@ -29,7 +29,7 @@ graph TD
         ProductService["📦 Product Service<br/>(3 Replicas)"]:::service
     end
     
-    MongoDB[("🍃 MongoDB<br/>(Users/Auth)")]:::db
+    PostgreSQL[("🐘 PostgreSQL<br/>(Products)")]:::db
     PostgreSQL[("🐘 PostgreSQL<br/>(Products)")]:::db
 
     %% Connections
@@ -43,7 +43,7 @@ graph TD
     Gateway -->|/api/productservice/*| ProductService
     
     %% Microservices to Databases
-    AuthService --> MongoDB
+    AuthService --> PostgreSQL
     ProductService --> PostgreSQL
 ```
 
